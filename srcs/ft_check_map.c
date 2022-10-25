@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:27:31 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/10/25 11:11:48 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/10/25 12:19:52 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,23 +70,21 @@ static int	ft_check_line(char *line)
 static void	ft_check_surrounded_by_walls(t_vars **v)
 {
 	int		i;
-	char	*err;
 
-	err = "Map is not surrounded by walls";
 	if (ft_check_line((*v)->map[0]))
-		ft_error(&v, err);
+		ft_error(&v, "Error :Map is not surrounded by walls");
 	i = ft_get_height((*v)->map) - 1;
 	while (i)
 	{
 		if ((*v)->map[i][0] != '1' ||
 			(*v)->map[i][ft_strlen((*v)->map[i]) - 1] != '1')
 		{
-			ft_error(&v, err);
+			ft_error(&v, "Error :Map is not surrounded by walls");
 		}
 		i--;
 	}
 	if (ft_check_line((*v)->map[ft_get_height((*v)->map) - 1]))
-		ft_error(&v, err);
+		ft_error(&v, "Error :Map is not surrounded by walls");
 }
 
 void	ft_check_map_valid(t_vars *vars)

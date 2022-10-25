@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:27:27 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/10/25 11:12:02 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/10/25 12:18:05 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,23 @@ static char	*ft_err_message(t_map_vars *map)
 {
 	if (map->c == 0)
 		return (
-			"Element 'C' is missing");
+			"Error : Element 'C' is missing");
 	if (map->p == 0)
 		return (
-			"Element 'P' is missing");
+			"Error :Element 'P' is missing");
 	if (map->e == 0 || map->e > 1)
 	{
 		if (map->e > 1)
-			return ("There is more then one element 'E'");
-		return ("Element 'E' is missing");
+			return ("Error : There is more then one element 'E'");
+		return ("Error : Element 'E' is missing");
 	}
 	if (map->p == 0 || map->p > 1)
 	{
 		if (map->p > 1)
-			return ("There is more then one element 'P'");
-		return ("Element 'P' is missing");
+			return ("Error : There is more then one element 'P'");
+		return ("Error : Element 'P' is missing");
 	}
-	return ("Element missing in the map");
+	return ("Error : Element missing in the map");
 }
 
 char	*ft_unknown_element(t_vars ***v)
@@ -63,7 +63,7 @@ char	*ft_unknown_element(t_vars ***v)
 		x++;
 	}
 	free((**v)->map);
-	ft_putendl_fd("Unknown element", 1);
+	ft_putendl_fd("Error : Unknown element", 1);
 	exit(1);
 }
 

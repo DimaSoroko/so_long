@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 11:47:52 by roudouch          #+#    #+#             */
-/*   Updated: 2022/10/25 11:29:18 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/10/25 12:20:48 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static void	ft_init_vars(t_vars *vars)
 	vars->e_vars.sign = 1;
 	vars->e_vars.x = 0;
 	vars->e_vars.sleep = 5;
-	vars->e_vars.sleep_for_move = 60;
+	vars->e_vars.sleep_for_move = 10;
 	vars->e_vars.path_to_move = 0;
 }
 
@@ -101,9 +101,9 @@ int	main(int argc, char **argv)
 {
 	t_vars	vars;
 
-	if (argc <= 1)
+	if (argc <= 1 || argc >= 3)
 	{
-		perror("Not enought arguments");
+		ft_putendl_fd("Error: Wrong amount of arguments", 1);
 		exit(1);
 	}
 	(void)argv;

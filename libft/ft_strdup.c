@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 17:44:41 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/10/24 15:18:39 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/10/25 11:38:24 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(char *s1)
 	i = 0;
 	str = malloc(sizeof(char) * ft_strlen(s1) + 1);
 	if (!str)
-		return (0);
+		exit (1);
 	while (s1[i])
 	{
 		str[i] = s1[i];
