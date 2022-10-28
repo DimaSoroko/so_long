@@ -6,11 +6,11 @@
 /*   By: dsoroko <dsoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 11:47:52 by roudouch          #+#    #+#             */
-/*   Updated: 2022/10/25 12:20:48 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/10/28 17:53:40 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 int	ft_key_hook(int keycode, t_vars *vars)
 {
@@ -93,7 +93,7 @@ static void	ft_init_vars(t_vars *vars)
 	vars->e_vars.sign = 1;
 	vars->e_vars.x = 0;
 	vars->e_vars.sleep = 5;
-	vars->e_vars.sleep_for_move = 10;
+	vars->e_vars.sleep_for_move = 60;
 	vars->e_vars.path_to_move = 0;
 }
 
@@ -101,9 +101,9 @@ int	main(int argc, char **argv)
 {
 	t_vars	vars;
 
-	if (argc <= 1 || argc >= 3)
+	if (argc != 2)
 	{
-		ft_putendl_fd("Error: Wrong amount of arguments", 1);
+		ft_putendl_fd("Wrong amount of arguments", 1);
 		exit(1);
 	}
 	(void)argv;
@@ -111,8 +111,8 @@ int	main(int argc, char **argv)
 	vars.map = ft_get_map(argv[1]);
 	if (vars.map != NULL)
 	{
-		ft_check_map_valid(&vars);
 		ft_init_vars(&vars);
+		ft_check_map_valid(&vars);
 		vars.mlx = mlx_init();
 		vars.win = mlx_new_window(vars.mlx,
 				vars.win_w * 50, vars.win_h * 50, "So_Long");

@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:28:51 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/10/25 12:20:35 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/10/25 11:28:31 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_put_text(t_vars ***v)
 	char	*number;
 
 	number = ft_itoa(++(**v)->movement);
-	text = ft_strjoin("Moves: ", number);
+	text = ft_strjoin("Move: ", number);
 	(**v)->img = mlx_xpm_file_to_image(
 			(**v)->mlx, "./img/wall.xpm", &img_w, &img_h);
 	mlx_put_image_to_window(

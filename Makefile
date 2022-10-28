@@ -67,7 +67,7 @@ On_IWhite='\033[0;107m'   # White
 
 NAME			= so_long                 												# name of the program
 
-CC				= gcc -g                       											# compiler
+CC				= gcc -fsanitize=address -g                       											# compiler
 
 FLAGS			= -Wall -Wextra -Werror   												# flags
 
@@ -81,6 +81,7 @@ SRCS			= 	./get_next_line/get_next_line_utils.c\
 					./srcs/ft_animation.c\
 					./srcs/ft_check_map_utils.c\
 					./srcs/ft_check_map.c\
+					./srcs/ft_check_path.c\
 					./srcs/ft_get_map.c\
 					./srcs/ft_movements.c \
 					./srcs/ft_put_image_and_text.c\

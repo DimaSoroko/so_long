@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsoroko <dsoroko@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsoroko <dsoroko@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:11:14 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/10/25 11:40:03 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/04/27 18:10:17 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_itoa(int nb)
 	len = get_len(n);
 	str = malloc(sizeof(char) * (len + 1));
 	if (!str)
-		exit (1);
+		return (NULL);
 	str[len--] = '\0';
 	if (n < 0)
 	{

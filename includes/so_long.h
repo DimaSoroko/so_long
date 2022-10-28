@@ -6,7 +6,7 @@
 /*   By: dsoroko <dsoroko@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 13:29:39 by dsoroko           #+#    #+#             */
-/*   Updated: 2022/10/25 11:19:13 by dsoroko          ###   ########.fr       */
+/*   Updated: 2022/10/28 17:45:10 by dsoroko          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@
 # include <fcntl.h>
 # include <stdio.h>
 
-typedef struct s_enemy {
+typedef struct s_enemy
+{
 	int		x_e;
 	int		y_e;
 	int		sign;
@@ -30,7 +31,8 @@ typedef struct s_enemy {
 	char	*imgs[5];
 }	t_enemy_vars;
 
-typedef struct s_vars {
+typedef struct s_vars
+{
 	void			*mlx;
 	void			*img;
 	void			*win;
@@ -40,17 +42,17 @@ typedef struct s_vars {
 	int				y_p;
 	int				movement;
 	char			**map;
+	char			**tmp;
 	int				collect;
+	int				c;
+	int				p;
+	int				e;
+	int				e_check;
+	int				c_check;
+	int				x;
+	int				y;
 	t_enemy_vars	e_vars;
 }	t_vars;
-
-typedef struct s_vars_map {
-	int	c;
-	int	p;
-	int	e;
-	int	x;
-	int	y;
-}	t_map_vars;
 
 char	**ft_get_map(char *fmap);
 void	to_left(t_vars **v);
@@ -61,6 +63,7 @@ void	ft_put_image(t_vars ***v, int x, int y, char *img);
 void	ft_put_text(t_vars ***v);
 void	ft_put_image_to_map(char p, int x1, int y1, t_vars **v);
 int		ft_get_height(char **map);
+int		ft_get_width(char **map);
 void	ft_check_map_valid(t_vars *vars);
 void	ft_check_extension(char *file_line);
 void	ft_check_elements(t_vars **vars);
@@ -69,5 +72,9 @@ int		ft_animation(t_vars *vars);
 int		ft_enemy_position(t_vars **vars);
 void	ft_open_exit(t_vars **vars);
 void	ft_exit_door(t_vars ***v);
+void	ft_check_path(t_vars **vars);
+char	**ft_dup_map(t_vars **vars);
+void	ft_free_dup(char **dup);
+void	ft_grid(char **grid, int i, int j, t_vars **vars);
 
 #endif
