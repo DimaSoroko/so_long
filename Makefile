@@ -67,7 +67,7 @@ On_IWhite='\033[0;107m'   # White
 
 NAME			= so_long                 												# name of the program
 
-CC				= gcc -fsanitize=address -g                       											# compiler
+CC				= gcc -fsanitize=address -g                       						# compiler
 
 FLAGS			= -Wall -Wextra -Werror   												# flags
 
@@ -123,7 +123,7 @@ $(NAME):	$(OBJS)
                  (_____)             						\n\
 															$(Color_Off)"
 			@echo $(BGreen)√$(Color_Off)$(BBlue)So_long Has Been Compiled!$(Color_Off);
-			@echo $(BBlue)To Use So_long :$(BGreen)$(UGreen)./so_long maps/_choose_a_map_.ber$(Color_Off);
+			@echo $(BBlue)To Use So Long :$(BGreen)$(UGreen)./so_long maps/choose_a_map_.ber$(Color_Off);
 
 clean: 																					# remove all .o
 			@$(RM) $(OBJS) libft/*.o get_next_line/*.o
